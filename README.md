@@ -51,6 +51,23 @@ The simulator demonstrates expected BB84 behavior under both secure and adversar
 
 The observed increase in QBER under interception validates the protocol's ability to detect unauthorized observation of transmitted qubits.
 
+## Screenshots
+
+### Application Interface
+
+![Home](screenshot/home.png)
+
+### Secure Quantum Communication
+
+![Secure Channel](screenshot/secure_channel.png)
+
+### Eavesdropping Detection
+
+![Eve Detected](screenshot/eve_detected.png)
+
+### Quantum Circuit Visualization
+
+![Circuit](screenshot/circuit.png)
 ## Installation
 
 ```bash
