@@ -1,72 +1,73 @@
-# 🔐 Quantum Cryptography Simulator — BB84 Protocol
+# Quantum Cryptography Simulator: BB84 Quantum Key Distribution
 
-An interactive simulator for **Quantum Key Distribution** using the BB84 protocol,
-built with **Qiskit** and **Streamlit**.
+An interactive simulation of the BB84 Quantum Key Distribution (QKD) protocol developed using Qiskit and Streamlit. The application demonstrates secure quantum communication, key generation, eavesdropping detection, and Quantum Bit Error Rate (QBER) analysis through an interactive web interface.
 
----
+## Overview
 
-## 🚀 Quick Start
+This project provides a practical implementation of the BB84 protocol, one of the foundational quantum cryptography schemes. The simulator models communication between Alice and Bob while allowing users to introduce an adversarial eavesdropper (Eve) and observe the resulting impact on key integrity and channel security.
+
+The application illustrates key quantum computing principles including superposition, measurement collapse, basis mismatch effects, and the no-cloning theorem.
+
+## Key Features
+
+* Interactive BB84 protocol simulation
+* Optional eavesdropper (Eve) injection
+* Quantum Bit Error Rate (QBER) computation
+* Qiskit-based quantum circuit generation
+* Measurement histogram visualization
+* Step-by-step protocol execution mode
+* Secure key extraction and analysis
+* Exportable key generation reports
+* Comparative analysis of secure and compromised channels
+
+## Technology Stack
+
+* Python
+* Qiskit
+* Qiskit Aer
+* Streamlit
+* NumPy
+* Matplotlib
+
+## Project Structure
+
+```text
+quantum_crypto/
+├── app.py
+├── quantum_bb84.py
+├── utils.py
+├── requirements.txt
+└── README.md
+```
+
+## Experimental Results
+
+The simulator demonstrates expected BB84 behavior under both secure and adversarial conditions:
+
+| Scenario            | QBER | Channel Status         |
+| ------------------- | ---- | ---------------------- |
+| No Eavesdropper     | ~0%  | Secure                 |
+| Active Eavesdropper | >11% | Eavesdropping Detected |
+
+The observed increase in QBER under interception validates the protocol's ability to detect unauthorized observation of transmitted qubits.
+
+## Installation
 
 ```bash
-# 1. Install dependencies
 pip install -r requirements.txt
-
-# 2. Run the app
 streamlit run app.py
 ```
 
-Open your browser at **http://localhost:8501**
+The application will be available locally at:
 
----
-
-## 📁 Project Structure
-
-```
-quantum_crypto/
-├── app.py            ← Streamlit UI (main entry point)
-├── quantum_bb84.py   ← Core quantum logic (BB84 protocol, Qiskit)
-├── utils.py          ← Visualization & helper functions
-├── requirements.txt  ← Python dependencies
-└── README.md         ← This file
+```text
+http://localhost:8501
 ```
 
----
+## Future Enhancements
 
-## ✨ Features
-
-| Feature | Description |
-|---|---|
-| BB84 Protocol | Full Alice → Eve (optional) → Bob simulation |
-| Qiskit Circuits | Real quantum circuits with X and H gates |
-| QBER Analysis | Quantum Bit Error Rate calculation |
-| Eavesdropping Detection | Eve causes ~25% QBER, threshold at 11% |
-| Histograms | Measurement result distributions (1024 shots) |
-| Bit Visualizer | Color-coded qubit comparison grid |
-| Step-by-step Mode | Reveal simulation stages one at a time |
-| Multiple Input Modes | Auto-generate, binary string, or ASCII text |
-| Download Key | Export key + metadata as a text report |
-| Security Comparison | Quantum vs classical encryption overview |
-
----
-
-## 🔬 Quantum Concepts Demonstrated
-
-- **Superposition** — Hadamard gate puts qubits in |+⟩/|−⟩ states
-- **Measurement collapse** — wrong-basis measurement yields random results
-- **No-cloning theorem** — Eve can't copy qubits without disturbing them
-- **Quantum advantage** — interception is physically detectable
-
----
-
-## 📦 Dependencies
-
-- `qiskit` — quantum circuit construction and transpilation
-- `qiskit-aer` — local quantum simulator backend
-- `streamlit` — web UI framework
-- `matplotlib` — all visualizations
-
----
-
-## 👩‍🔬 Authors
-
-University Mini-Project · Quantum Cryptography Simulator
+* Integration with real quantum hardware backends
+* Support for additional QKD protocols
+* Multi-party communication simulations
+* Advanced attack scenario modeling
+* Performance benchmarking across simulator backends
